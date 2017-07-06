@@ -8,9 +8,6 @@ using System.Collections;
 
 namespace BidirectionalList
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class ListItem
     {
         public ListItem nextItem { get; internal set; }
@@ -27,6 +24,7 @@ namespace BidirectionalList
 
     public class LinkedLis : IEnumerable, IEnumerator
     {
+        public delegate bool IntFilter(int i);
         private ListItem _head;
         private ListItem _head_fr;
         private ListItem _tail;
@@ -307,12 +305,27 @@ namespace BidirectionalList
             return false;
         }
 
+        public static LinkedLis RemoveByCodition(LinkedLis list, IntFilter filter)
+        {
+            LinkedLis temp = new LinkedLis();
+
+            foreach (int i in list)
+            {
+                if (!filter(i))
+                {
+                    temp.AddLast(i);
+                }
+            }
+
+            return temp;
+        }
+
         /// <summary>
         /// Search for an item by its value
         /// </summary>
         /// <param name="value">Value for search</param>
         /// <returns>Found value or -1 if not found</returns>
-        public int Contains(int value)
+        public int SearchByValue(int value)
         {
             ListItem current = _head;
             while (current != null)
@@ -347,6 +360,27 @@ namespace BidirectionalList
             }
 
             return -1;
+        }
+
+        /// <summary>
+        /// Search for an item by its condition
+        /// </summary>
+        /// <param name="list">LinkedLis</param>
+        /// <param name="filter">Function</param>
+        /// <returns>LinkedLis with a predetermined condition</returns>
+        public static LinkedLis SearchByCondition(LinkedLis list, IntFilter filter)
+        {
+            LinkedLis temp = new LinkedLis();
+            
+            foreach(int i in list)
+            {
+                if (filter(i))
+                {
+                    temp.AddLast(i);
+                }
+            }
+
+            return temp;
         }
     }
 }

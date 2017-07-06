@@ -18,12 +18,14 @@ namespace myList
             a.AddLast(9);
             a.AddLast(10);
 
+            a = LinkedLis.RemoveByCodition(a, i => (i > 3));
 
             foreach (int i in a)
             {
                 Console.WriteLine(i);
             }
 
+            Console.ReadLine(); //Pause
             Console.ReadLine(); //Pause
         }
     }
