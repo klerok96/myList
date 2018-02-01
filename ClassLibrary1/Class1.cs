@@ -191,7 +191,7 @@ namespace BidirectionalList
             }
         }
 
-        /// <summary>
+        /// <summasdsdry>
         /// Deleting an element by value
         /// </summary>
         /// <param name="item">Value</param>
