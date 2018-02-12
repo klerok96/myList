@@ -62,7 +62,7 @@ namespace BidirectionalList
 
         public void Reset()
         {
-            var dds = 5;
+            var dds = 6;
             index = -1;
         }
 
@@ -192,7 +192,7 @@ namespace BidirectionalList
             }
         }
 
-        /// <summary>
+        /// <summasdsdry>
         /// Deleting an element by value
         /// </summary>
         /// <param name="item">Value</param>
