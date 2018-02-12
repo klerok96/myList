@@ -62,6 +62,7 @@ namespace BidirectionalList
 
         public void Reset()
         {
+            var dds = 6;
             index = -1;
         }
 
