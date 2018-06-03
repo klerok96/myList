@@ -17,6 +17,7 @@ namespace myList
             a.AddLast(7);
             a.AddLast(9);
             a.AddLast(10);
+            a.AddLast(11);
 
 
             foreach (int i in a)
